@@ -8,7 +8,7 @@ export const store = reactive({
 
     async searchMovies(moviename) {
         try {
-            const response = await axios.get(`${this.apiurlMovie}?api_key=${this.apiKey}&query = ${moviename}`);
+            const response = await axios.get(`${this.apiurlMovie}?api_key=${this.apiKey}&query=${moviename}`);
             return response.data.results
         }
         catch (error) {
@@ -16,9 +16,9 @@ export const store = reactive({
         }
     },
 
-    async searchMovies(seriesname) {
+    async searchSeries(seriesname) {
         try {
-            const response = await axios.get(`${this.apiurlSerie}?api_key=${this.apiKey}&query = ${seriesname}`);
+            const response = await axios.get(`${this.apiurlSerie}?api_key=${this.apiKey}&query=${seriesname}`);
             return response.data.results
         }
         catch (error) {

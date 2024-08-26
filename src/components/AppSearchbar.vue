@@ -1,5 +1,5 @@
 <script>
-import { store } from './store.js';
+import { store } from '../store.js';
 export default {
     data() {
         return {
@@ -9,9 +9,9 @@ export default {
     },
     methods: {
         async searchContent() {
-            if (this.searchQuery) {
-                let movieResults = await store.searchMovie(this.searchQuery)
-                let seriesResults = await store.searchSeries(this.searchQuery)
+            if (this.searchQuery.toLowerCase) {
+                let movieResults = await store.searchMovies(this.searchQuery);
+                let seriesResults = await store.searchSeries(this.searchQuery);
                 this.results = [...movieResults, ...seriesResults];
             }
         }

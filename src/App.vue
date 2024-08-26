@@ -1,5 +1,5 @@
 <script>
-import Appheader from './components/Appheader.vue';
+import AppHeader from './components/AppHeader.vue';
 import { store } from './store.js';
 import axios from 'axios';
 import AppSearchbar from './components/AppSearchbar.vue';
@@ -11,7 +11,7 @@ export default {
     }
   },
   components:{
-    Appheader,
+    AppHeader,
     AppSearchbar,
     
   }
