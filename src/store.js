@@ -1,29 +1,13 @@
-import axios from "axios";
-import { reactive } from "vue";
+import { reactive } from 'vue'
 
 export const store = reactive({
-    apiurlMovie: "https://api.themoviedb.org/3/search/movie",
-    apiurlSerie: "https://api.themoviedb.org/3/search/tv",
+
     apiKey: "0fe111ce8fba000d787deffde8430250",
+    api_url: 'https://api.themoviedb.org/3/search/movie?api_key=ed5a553d0f0fa2ed377fc37dff0de52e&language=it-IT&query=',
+    apiSerie: 'https://api.themoviedb.org/3/search/tv?api_key=ed5a553d0f0fa2ed377fc37dff0de52e&language=en-US&query=',
+    apiFlag: 'https://countryflagsapi.com/png/ae',
+    movieList: [],
+    serieList: [],
 
-    async searchMovies(moviename) {
-        try {
-            const response = await axios.get(`${this.apiurlMovie}?api_key=${this.apiKey}&query=${moviename}`);
-            return response.data.results
-        }
-        catch (error) {
-            console.error("errore nella ricerca del film", error)
-        }
-    },
-
-    async searchSeries(seriesname) {
-        try {
-            const response = await axios.get(`${this.apiurlSerie}?api_key=${this.apiKey}&query=${seriesname}`);
-            return response.data.results
-        }
-        catch (error) {
-            console.error("errore nella ricerca della serie", error)
-        }
-    },
 })
 

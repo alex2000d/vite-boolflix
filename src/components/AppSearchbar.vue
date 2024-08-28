@@ -1,38 +1,32 @@
 <script>
-import { store } from '../store.js';
 export default {
-    data() {
-        return {
-            searchQuery:'',
-            results: []
-        };
-    },
-    methods: {
-        async searchContent() {
-            if (this.searchQuery.toLowerCase) {
-                let movieResults = await store.searchMovies(this.searchQuery);
-                let seriesResults = await store.searchSeries(this.searchQuery);
-                this.results = [...movieResults, ...seriesResults];
-            }
+    data(){
+        return{
+            value: ''
         }
-    },
+    }
+    
 }
 </script>
-<template>
-    <div>
-        <input v-model="searchQuery" placeholder="Cerca un film o una serie..." />
-        <button @click="searchContent">Cerca</button>
+<template lang="">
+<div class=" d-flex mb-3 mt-3">
 
-        <div v-if="results.length > 0">
-            <h2>Risultati della ricerca:</h2>
-            <ul>
-                <li v-for="item in results" :key="item.id">
-                    {{ item.title || item.name }} ({{ item.media_type }})
-                </li>
-            </ul>
-        </div>
-    </div>
+<input type="text" class="me-2 " placeholder="Cerca film o serie  " aria-label="Recipient's username" aria-describedby="button-addon2"
+v-model="value" @keyup.enter="$emit ('buttonClick', value)">
+<button class="btn btn-outline-secondary" type="button" id="button-addon2" @click="$emit ('buttonClick', value)">cerca</button>
+
+</div>
 </template>
-<style lang="">
-    
+<style lang="scss">
+
+button{
+border:none;
+background-color: white;
+color:red;
+margin-left: 1rem;
+font-size: 15px;
+padding: 0.5rem;
+border: 1px solid red
+}
+
 </style>

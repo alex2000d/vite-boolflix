@@ -1,27 +1,25 @@
 <script>
+import { store } from './store'
 import AppHeader from './components/AppHeader.vue';
-import { store } from './store.js';
-import axios from 'axios';
-import AppSearchbar from './components/AppSearchbar.vue';
+
 export default {
+  components:{
+    AppHeader,
+  },
   data(){
     return{
       store,
-      axios
     }
-  },
-  components:{
-    AppHeader,
-    AppSearchbar,
-    
   }
 }
 </script>
-<template>
-  <div>
-    <AppSearchbar />
-  </div>
+<template lang="">
+<div>
+<AppHeader></AppHeader>
+
+</div>
 </template>
 <style lang="scss">
-@use './style/generals.scss'
+@use './style/generals.scss' as *;
 </style>
+
