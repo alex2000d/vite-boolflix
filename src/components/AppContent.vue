@@ -1,8 +1,11 @@
 <script>
 import { store } from '../store';
+import AppFilm from './AppFilm.vue';
+
 import axios from 'axios'
 export default {
   components:{
+    AppFilm,
     
     axios
   },
